@@ -61,7 +61,7 @@ impl Validator for SetValidator {
         self._validation_logic(py, input, input.strict_set()?, extra, slots)
     }
 
-    fn get_name<'data>(&self, py: Python, slots: &'data [CombinedValidator]) -> String {
+    fn get_name(&self, py: Python, slots: &[CombinedValidator]) -> String {
         let validator = unsafe { slots.get_unchecked(self.item_validator_id) };
         format!("{}-{}", Self::EXPECTED_TYPE, validator.get_name(py, slots))
     }

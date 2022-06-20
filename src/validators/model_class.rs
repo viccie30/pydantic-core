@@ -87,7 +87,7 @@ impl Validator for ModelClassValidator {
         }
     }
 
-    fn get_name<'data>(&self, py: Python, _slots: &'data [CombinedValidator]) -> String {
+    fn get_name(&self, py: Python, _slots: &[CombinedValidator]) -> String {
         // Get the class's `__name__`, not using `class.name()` since it uses `__qualname__`
         // which is not what we want here
         let class = self.class.as_ref(py);

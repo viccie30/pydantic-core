@@ -321,7 +321,7 @@ pub trait Validator: Send + Sync + Clone + Debug {
 
     /// `get_name` generally returns `Self::EXPECTED_TYPE` or some other clear identifier of the validator
     /// this is used in the error location in unions, and in the top level message in `ValidationError`
-    fn get_name<'data>(&self, py: Python, _slots: &'data [CombinedValidator]) -> String;
+    fn get_name(&self, py: Python, _slots: &[CombinedValidator]) -> String;
 }
 
 pub struct BuildContext {

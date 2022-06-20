@@ -207,7 +207,7 @@ impl Validator for ModelValidator {
         }
     }
 
-    fn get_name<'data>(&self, _py: Python, _slots: &'data [CombinedValidator]) -> String {
+    fn get_name(&self, _py: Python, _slots: &[CombinedValidator]) -> String {
         self.name.clone()
     }
 }
